@@ -1,0 +1,8 @@
+.title { color: black; font-style: normal; font-weight: bolder; font-size: 14px; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; text-decoration: none }.text  { color: black; font-style: normal; font-weight: normal; font-size: 12px; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; text-decoration: none } body { color: black; font-style: normal; font-weight: normal; font-size: 12px; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; text-decoration: none } a { color: gray }a:hover { color: black }a:vlink { color: gray } #taskbox{
+	background-color: #e6edff;
+	list-style-type: decimal;
+	list-style-position: outside;
+	margin: 12px 0;
+	padding: 2px 12px;
+	border: solid 1px #bfbfbf
+	}

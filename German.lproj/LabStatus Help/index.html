@@ -1,0 +1,88 @@
+<html>
+
+	<head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>LabStatus Help</title>
+		<meta name="AppleTitle" content="LabStatus Help" />
+		<meta name="AppleIcon" content="LabStatus Help/gfx/iconsmall.png" />
+		<meta name="robots" content="noindex" />
+		<link href="css/styles.css" rel="stylesheet" media="all" />
+	</head>
+
+	<body bgcolor="#ffffff">
+      <h1><img class="icon" src="gfx/icon.png" alt="LabStatus icon"/> LabStatus</h1>
+      
+      LabStatus ist ein kleines Monitoring-Utility um wiederkehrende Kommandos auf eine Menge &auml;hnlich konfigurierter Hosts
+      auzuf&uuml;hren. Sie verwalten beispielsweise ein Labor mit 20 Rechnern. Jeder Rechner kann Windows oder für administrative
+      Aufgaben Linux booten. Wenn Sie nun wissen wollen, welcher Host hochgefahren ist bzw. welches Betriebsystem gerade
+      gebootet ist, kann dies LabStatus für Sie leisten. Sie k&ouml;nnen in LabStatus Ihre Hosts und entsprechende Indikatoren
+      definieren. Diese werden kontinuierlich ausgef&uuml;hrt. Dar&uuml;ber hinaus gibt es die M&ouml;glichkeit Aktionen zu 
+      konfigurieren, die Sie bei Bedarf ausl&ouml;sen k&ouml;nnen (z.B. Wake-On-Lan).
+      
+      <a name="hosts"><p class="title">Hosts hinzuf&uuml;gen:</p>
+      <p class="text">Damit LabStatus &uuml;berhaupt etwas tun kann, m&uuml;ssen nat&uuml;rlich erst einmal Hosts definiert werden.</p>
+      
+      <div align="center"><img src="gfx/hosts.png"></div>
+      
+      <div id="taskbox">
+      	<p class="text">
+			Um einen Host hinzuzuf&uuml;gen:
+			<ol>
+				<li>&Ouml;ffnen Sie den Einstellungen-Dialog</li>
+				<li>Klicken Sie auf den Hinzuf&uuml;gen-Button (+)</li>
+				<li>Geben Sie den Hostnamen, die IP-Adresse, Mac-Adresse, Benutzername und Password ein</li>
+			</ol>
+		</p>
+      </div>
+
+      <a name="indicators"><p class="title">Indikatoren hinzuf&uuml;gen:</p>
+      <p class="text">Sie k&ouml;nnen Indikatoren definieren, indem Sie ein Shell-Kommando und einen Namen angeben. Der R&uuml;ckgabewert 
+                      des Shell-kommandos wird benutzt um den Status des Indikators anzuzeigen. Ein Wert von 0 steht hierbei f&uuml;r
+                      eine erfolgreiche Ausf&uuml;hrung und wird durch einen gr&uuml;nen Indikator wiedergegeben. Ein Wert gr&uml;ßer als 0 wird
+                      entsprechend mit der Farbe Rot gekennzeichnet. Zu beachten ist: Der Zeichenkette für das Kommando wird vor
+                      der Ausf&uuml;hrung intern die Zeichenkette '1>/dev/null 2>&amp;1' angeh&auml;ngt um keine Ausgaben zu produzieren.</p>
+      
+      <div align="center"><img src="gfx/indicators.png"></div>
+      
+      <div id="taskbox">
+      	<p class="text">
+			Um einen Indikator hinzuzuf&uuml;gen:
+			<ol>
+				<li>&Ouml;ffnen Sie den Einstellungen-Dialog</li>
+				<li>Klicken Sie auf den Hinzuf&uuml;gen-Button (+)</li>
+				<li>Vergeben Sie einen Namen und das entsprechende Shell-Kommando</li>
+                            
+                Beispiel:
+                Wir erzeugen einen Indikator mit dem Namen 'PING' und geben folgendes Kommando an:
+                <pre>/sbin/ping -t 2 -c 1 %ipaddress%</pre>
+                Sie können %ipaddress%, %macaddress%, %hostname%, %username% und %password% in Ihren Shell-Kommandos verwenden.
+			</ol>
+		</p>
+      </div>
+
+      <a name="hosts"><p class="title">Aktionen hinzuf&uuml;gen:</p>
+      <p class="text">Sie k&ouml;nnen auch Aktionen definieren. Diese werden bei Bedarf durch einen Klick auf den zugeordneten Button
+      ausgel&ouml;ßt. Zu beachten ist: Der Zeichenkette für das Kommando wird vor
+                      der Ausf&uuml;hrung intern die Zeichenkette '1>/dev/null 2>&amp;1' angeh&auml;ngt um keine Ausgaben zu produzieren.</p>
+      
+      <div align="center"><img src="gfx/actions.png"></div>
+      
+      <div id="taskbox">
+      	<p class="text">
+			Um eine Aktion hinzuzuf&uuml;gen:
+			<ol>
+				<li>&Ouml;ffnen Sie den Einstellungen-Dialog</li>
+				<li>Klicken Sie auf den Hinzuf&uuml;gen-Button (+)</li>
+				<li>Vergeben Sie einen Namen und das entsprechende Shell-Kommando</li>
+                            
+                Beispiel:
+                Wir erzeugen eine Aktion mit dem Namen 'WOL' und geben folgenden Kommando an:
+                <pre>/usr/local/bin/wol %macaddress%</pre>
+                Sie können %ipaddress%, %macaddress%, %hostname%, %username% und %password% in Ihren Shell-Kommandos verwenden.
+			</ol>
+		</p>
+      </div>
+      
+</body>
+
+</html>

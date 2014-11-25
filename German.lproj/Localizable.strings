@@ -1,0 +1,5 @@
+LABSTATUS_NEW_HOST = "Neuer Host";
+LABSTATUS_NEW_INDICATOR = "Neuer Indikator";
+LABSTATUS_NEW_ACTION = "Neue Aktion";
+LABSTATUS_INFORMATION = "Indikator: %@\nHost %@\nAlter Wert: %d\nNeuer Wert: %d";
+LABSTATUS_UNCONFIGURED = "Keine Hosts definiert!\n\nBenutzen Sie den Einstellungen-Dialog um Hosts, Indikatoren und Aktionen zu konfigurieren.";

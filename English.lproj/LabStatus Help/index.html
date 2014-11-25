@@ -1,0 +1,89 @@
+<html>
+
+	<head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<title>LabStatus Help</title>
+		<meta name="AppleTitle" content="LabStatus Help" />
+		<meta name="AppleIcon" content="LabStatus Help/gfx/iconsmall.png" />
+		<meta name="robots" content="noindex" />
+		<link href="css/styles.css" rel="stylesheet" media="all" />
+	</head>
+
+	<body bgcolor="#ffffff">
+      <h1><img class="icon" src="gfx/icon.png" alt="LabStatus icon"/> LabStatus</h1>
+      
+      LabStatus is a small but useful tool for monitoring a set of hosts. For example you have a lab setup 
+      with 20 hosts. Each host can either boot Windows or 	  boot linux for administrative tasks. Maybe you 
+      want to know how many hosts are up and also which kind of operating system is running. So, this is what 
+      LabStatus can do for you. In LabStatus you can define your set of hosts with the hostname, ip-address and mac-address. 
+      For each of these hosts all indicators you define will be executed. It is also possible to configure actions, 
+      for example wake on lan.
+      
+      <a name="hosts"><p class="title">Adding hosts:</p>
+      <p class="text">Before LabStatus can do anything you must define host entries. For each host 
+                      the indicators and actions will be generated in the main window.</p>
+      
+      <div align="center"><img src="gfx/hosts.png"></div>
+      
+      <div id="taskbox">
+      	<p class="text">
+			To add an host:
+			<ol>
+				<li>Open the preferences panel.</li>
+				<li>Hit the add button (+) to add an new host</li>
+				<li>Enter a hostname, IP-address, MAC-address, username and password</li>
+			</ol>
+		</p>
+      </div>
+
+      <a name="indicators"><p class="title">Adding indicators:</p>
+      <p class="text">You can define indicators for your hosts. An indicator consist of a name and a 
+      				  command to be executed on a host. The return value of the command will be used 
+                      to change the color of the indicator. A result of 0 means success (green indicator). 
+                      A result greater than 0 indicates a failure (red indicator). The string '1>/dev/null 2>&amp;1' 
+                      will automatically added to the command string during runtime.</p>
+      
+      <div align="center"><img src="gfx/indicators.png"></div>
+      
+      <div id="taskbox">
+      	<p class="text">
+			To add an indicator:
+			<ol>
+				<li>Open the preferences panel.</li>
+				<li>Hit the add button (+) to add an new indicator</li>
+				<li>Enter a name and a command to execute</li>
+                            
+                Example:
+                Create a new indicator with the name 'PING' and enter the following command:
+                <pre>/sbin/ping -t 2 -c 1 %ipaddress%</pre>
+                You can use %ipaddress%, %macaddress%, %hostname%, %username% or %password% to define your commands.
+			</ol>
+		</p>
+      </div>
+
+      <a name="hosts"><p class="title">Adding actions:</p>
+      <p class="text">You can define actions that will be executed if you hit the corresponding action 
+      				  button next to a host. The string '1>/dev/null 2>&amp;1' will automatically added to the 
+                      command string during runtime.</p>
+      
+      <div align="center"><img src="gfx/actions.png"></div>
+      
+      <div id="taskbox">
+      	<p class="text">
+			To add an action:
+			<ol>
+				<li>Open the preferences panel.</li>
+				<li>Hit the add button (+) to add an new action</li>
+				<li>Enter a name and a command to execute</li>
+                            
+                Example:
+                Create a new action with the name 'WOL' and enter the following command:
+                <pre>/usr/local/bin/wol %macaddress%</pre>
+                You can use %ipaddress%, %macaddress%, %hostname%, %username% or %password% to define your commands.
+			</ol>
+		</p>
+      </div>
+      
+</body>
+
+</html>
